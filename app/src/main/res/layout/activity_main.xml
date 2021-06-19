@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="hello，大家好"
+            android:textColor="#f00"
+            android:textSize="20dp" />
+
+
+        <LinearLayout
+            android:id="@+id/ll_container"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="#FFF"
+            android:orientation="vertical"
+            android:paddingBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/btn_normal"
+                        style="@style/AudioImgStyle"
+                        android:onClick="onPlay"
+                        android:src="@drawable/record" />
+
+                    <TextView
+                        style="@style/AudioTextStyle"
+                        android:text="原声" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/btn_luoli"
+                        style="@style/AudioImgStyle"
+                        android:onClick="onPlay"
+                        android:src="@drawable/luoli" />
+
+                    <TextView
+                        style="@style/AudioTextStyle"
+                        android:text="萝莉" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/btn_dashu"
+                        style="@style/AudioImgStyle"
+                        android:onClick="onPlay"
+                        android:src="@drawable/dashu" />
+
+                    <TextView
+                        style="@style/AudioTextStyle"
+                        android:text="大叔" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/btn_jingsong"
+                        style="@style/AudioImgStyle"
+                        android:onClick="onPlay"
+                        android:src="@drawable/jingsong" />
+
+                    <TextView
+                        style="@style/AudioTextStyle"
+                        android:text="惊悚" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/btn_gaoguai"
+                        style="@style/AudioImgStyle"
+                        android:onClick="onPlay"
+                        android:src="@drawable/gaoguai" />
+
+                    <TextView
+                        style="@style/AudioTextStyle"
+                        android:text="搞怪" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/btn_kongling"
+                        style="@style/AudioImgStyle"
+                        android:onClick="onPlay"
+                        android:src="@drawable/kongling" />
+
+                    <TextView
+                        style="@style/AudioTextStyle"
+                        android:text="空灵" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <TextView
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/ll_container"
+            android:id="@+id/tv_second"
+            android:text="下面可以自定义各种声音效果"
+            android:gravity="center"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!--  音调 0.5 to 2.0  default 1.0-->
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/tv_second"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_pitch"
+                android:text="音调"
+                android:gravity="center"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+
+            <SeekBar
+                android:layout_gravity="center_vertical"
+                android:id="@+id/sb_pitch"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:max="100"
+                android:min="0"
+                android:progress="0" />
+        </LinearLayout>
+
+        <!--  回声延迟 10  to 5000.  Default = 500-->
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/tv_second"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_echo"
+                android:text="回声延迟"
+                android:gravity="center"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+
+            <SeekBar
+                android:layout_gravity="center_vertical"
+                android:id="@+id/sb_echo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:max="100"
+                android:min="0"
+                android:progress="0" />
+        </LinearLayout>
+
+        <!--  颤音的扭曲程度 -1 to 1.  Default = 0-->
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/tv_second"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_tremolo"
+                android:text="颤音扭曲"
+                android:gravity="center"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+
+            <SeekBar
+                android:layout_gravity="center_vertical"
+                android:id="@+id/sb_tremolo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:max="100"
+                android:min="0"
+                android:progress="0" />
+        </LinearLayout>
+
+
+        <!--  频率 之前的多少倍-->
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/tv_second"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_frequency"
+                android:text="频率"
+                android:gravity="center"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+
+            <SeekBar
+                android:layout_gravity="center_vertical"
+                android:id="@+id/sb_frequency"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:max="100"
+                android:min="0"
+                android:progress="1" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/bt_custom_play"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="40dp"
+                android:onClick="onPlay"
+                android:text="播放" />
+
+
+            <Button
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="40dp"
+                android:onClick="onStop"
+                android:text="停止" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.core.widget.NestedScrollView>
+
+
